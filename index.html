@@ -624,8 +624,8 @@ flags常见设置：</p>
 <span class="c1"># 连续播放视频帧图像</span>
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
     <span class="c1"># 从视频流中读取一帧图像</span>
+    <span class="n">success</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cameraCapture</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
-        <span class="n">success</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cameraCapture</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
         <span class="c1"># 显示图像</span>
         <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&quot;display&quot;</span><span class="p">,</span><span class="n">frame</span><span class="p">)</span>
         <span class="c1"># 将帧图像添加到视频保存序列中</span>
