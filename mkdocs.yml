@@ -1,11 +1,19 @@
 site_name: 培训资料
 theme: material
+extra:
+    search:
+        language: 'en,ja'
+
 site_description: '云笔记'
 docs_dir: docs
 site_dir: site
 page:
-- Home:index.md
-- CheatSheet: cheatsheet.md
+    - 主页: index.md
+    - 培训:
+        - OpenCV: opencv.md
+        - CheatSheet: cheatsheet.md
+        - video2image: video2image.md
+        - Classification: classification.md
 extra_javascript:
     - 'js/extra.js'
     - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
