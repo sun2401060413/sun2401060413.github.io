@@ -1,0 +1,840 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="云笔记">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en,ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>Classification 接口 - 培训资料</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#classification" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="培训资料" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              培训资料
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Classification 接口
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="培训资料" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    培训资料
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="主页" class="md-nav__link">
+      主页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      2019 summer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        2019 summer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Deeplearning
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        Deeplearning
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Classification 接口
+      </label>
+    
+    <a href="./" title="Classification 接口" class="md-nav__link md-nav__link--active">
+      Classification 接口
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#alexnet" title="AlexNet网络" class="md-nav__link">
+    AlexNet网络
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datalistgenerate" title="DatalistGenerate 接口" class="md-nav__link">
+    DatalistGenerate 接口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input" title="input接口" class="md-nav__link">
+    input接口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loss" title="loss接口" class="md-nav__link">
+    loss接口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test_performance" title="test_performance接口" class="md-nav__link">
+    test_performance接口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizers_settings" title="optimizers_settings接口" class="md-nav__link">
+    optimizers_settings接口
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Opencv
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Opencv
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../opencv/cheatsheet/" title="OpenCV CheatSheet" class="md-nav__link">
+      OpenCV CheatSheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../opencv/opencv/" title="OpenCV 培训" class="md-nav__link">
+      OpenCV 培训
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../opencv/video2image/" title="opencv 常用程序（一）" class="md-nav__link">
+      opencv 常用程序（一）
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Temp
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Temp
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../temp/tmp/" title="Tmp" class="md-nav__link">
+      Tmp
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#alexnet" title="AlexNet网络" class="md-nav__link">
+    AlexNet网络
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datalistgenerate" title="DatalistGenerate 接口" class="md-nav__link">
+    DatalistGenerate 接口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input" title="input接口" class="md-nav__link">
+    input接口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loss" title="loss接口" class="md-nav__link">
+    loss接口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test_performance" title="test_performance接口" class="md-nav__link">
+    test_performance接口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizers_settings" title="optimizers_settings接口" class="md-nav__link">
+    optimizers_settings接口
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="classification">Classification 接口<a class="headerlink" href="#classification" title="Permanent link">&para;</a></h1>
+<details class="info"><summary>版本信息</summary><p>Created by 孙姣姣 2019-07-31 20:14 Version 1.0.1    </p>
+<p>Last Update：2019-08-01 08:37  </p>
+<ul>
+<li>修改文档格式;</li>
+<li>将图片更换为代码;</li>
+</ul>
+</details>
+<p><a href="/2019_summer/deepLearning/alexnet.zip">Alexnet 代码下载</a></p>
+<hr />
+<h3 id="alexnet">AlexNet网络<a class="headerlink" href="#alexnet" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>在<code>AlexNet</code>网络程序运行之前要接入<code>loss</code>、<code>test_performance</code>、<code>flags</code>、<code>input</code>、<code>optimizers_settings</code>这五个模块。
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">loss</span>
+<span class="kn">import</span> <span class="nn">test_performance</span> <span class="kn">as</span> <span class="nn">tp</span>
+<span class="kn">import</span> <span class="nn">flags</span>
+<span class="kn">import</span> <span class="nn">input</span>
+<span class="kn">import</span> <span class="nn">optimizers_setting</span>
+</pre></div></p>
+</li>
+<li>
+<p>AlexNet网络要求输入的图片大小为<code>224*224</code>。</p>
+</li>
+<li>
+<p>生成<code>.txt</code>日志文件，用来记录训练参数：<code>mode</code>、<code>filepath</code>、<code>savepath</code>、<code>weightpath</code>、<code>batch_size</code>、<code>extension</code>、<code>training_ratio</code>、<code>validation_ratio</code>、<code>size、channels</code>、<code>input_mode</code>、<code>epoches</code>、<code>classname</code>、<code>training samples</code>、<code>validate samples</code>、<code>test samples</code>、<code>Totally time cost</code>、<code>Test score</code>和<code>Test accuracy</code>。
+<div class="codehilite"><pre><span></span><span class="c1"># 训练参数配置记录</span>
+<span class="n">recorder_name</span> <span class="o">=</span> <span class="n">info_dict</span><span class="p">[</span><span class="s2">&quot;savepath&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;/training_log_&quot;</span> <span class="o">+</span> <span class="n">part_string</span> <span class="o">+</span> <span class="s2">&quot;.txt&quot;</span>
+</pre></div></p>
+</li>
+<li>
+<p>生成一个表格，用来记录loss和acc值。
+ <div class="codehilite"><pre><span></span><span class="c1"># 训练过程数据记录</span>
+<span class="n">csv_savename</span> <span class="o">=</span> <span class="n">info_dict</span><span class="p">[</span><span class="s2">&quot;savepath&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="s2">&quot;AlexNet_&quot;</span> <span class="o">+</span> <span class="n">part_string</span> <span class="o">+</span> <span class="s2">&quot;_loss.csv&quot;</span>
+</pre></div></p>
+</li>
+<li>
+<p>生成一张图片，用来训练集和验证集的loss和acc值。
+ <div class="codehilite"><pre><span></span><span class="c1"># 训练过程数据绘制图形</span>
+<span class="n">fig_savename</span> <span class="o">=</span> <span class="n">info_dict</span><span class="p">[</span><span class="s2">&quot;savepath&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="s2">&quot;AlexNet_&quot;</span> <span class="o">+</span> <span class="n">part_string</span> <span class="o">+</span> <span class="s2">&quot;.png&quot;</span>
+</pre></div></p>
+</li>
+<li>
+<p>生成一个.h5文件，用来保存训练模型。
+ <div class="codehilite"><pre><span></span><span class="c1"># 训练保存模型</span>
+<span class="n">model_savename</span> <span class="o">=</span> <span class="n">info_dict</span><span class="p">[</span><span class="s2">&quot;savepath&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="s2">&quot;AlexNet_&quot;</span> <span class="o">+</span> <span class="n">part_string</span> <span class="o">+</span> <span class="s2">&quot;_model.h5&quot;</span>
+</pre></div></p>
+</li>
+<li>
+<p>当前模式为训练模式。
+ <div class="codehilite"><pre><span></span><span class="c1"># 运行模式配置</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;mode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;train&quot;</span>
+</pre></div></p>
+</li>
+<li>
+<p><code>‘r’</code>用来切换正斜杠和反斜杠，<code>‘I:\lvtong1\resized’</code>是你自己数据集（图片大小为<code>224*224</code>）。<code>‘I:\lvtong1\results’</code>用来保存你训练的结果，在此程序中会生成<code>.png</code>、<code>.csv</code>、<code>.h5</code>、<code>.txt</code>文件。
+<div class="codehilite"><pre><span></span><span class="c1"># 数据集读取地址配置</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;filepath&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;I:\lvtong1\resized&#39;</span>
+<span class="c1"># 模型保存地址配置</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;savepath&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;I:\lvtong1\results&#39;</span>
+</pre></div></p>
+</li>
+<li>
+<p>迁移权重的读取地址。
+<div class="codehilite"><pre><span></span><span class="c1"># 迁移权重读取根目录</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;weightpath&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;F:/sz/keras_weights&#39;</span>
+</pre></div></p>
+</li>
+<li>
+<p><code>‘batch_size’</code>：单次训练用的样本数；<code>‘extention’</code>:扩展名；<code>‘training_ratio’</code>：训练集占样本总量的比率；<code>‘validation_ratio’</code>:验证集占样本总量的比率；训练集、验证集和测试集的比率一般为：8：1：1。
+<code>‘size’</code>:图片大小；<code>‘channels’</code>: 通道数；<code>‘input_mode’</code>:   输入模式；<code>‘epoches’</code>:训练轮；<code>‘classname’</code>:分类的类名。
+ <div class="codehilite"><pre><span></span><span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;batch_size] = 16</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;extension&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;.png&quot;</span><span class="p">]</span>
+<span class="n">ipnut_dict</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">224</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;channels&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;input_mode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;resized&quot;</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;epoches&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;classname&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name_1&quot;</span><span class="p">,</span><span class="s2">&quot;name_2&quot;</span><span class="p">,</span><span class="s2">&quot;name_3&quot;</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="s2">&quot;name_N&quot;</span><span class="p">]</span> <span class="c1"># 根据实际数据集配置,注:不要使用中文</span>
+</pre></div></p>
+</li>
+</ol>
+<hr />
+<h3 id="datalistgenerate">DatalistGenerate 接口<a class="headerlink" href="#datalistgenerate" title="Permanent link">&para;</a></h3>
+<p>从分好类的图片集(一类一个文件夹)，生成文件路径与对应标签列表。  </p>
+<ol>
+<li>
+<p><code>DataFile</code>: 为类名，<code>imagePath</code>:  待生成图片集根目录（根目录下不要有其他文件和文件夹），<code>extensions</code>： 文件扩展名，<code>training_ratio</code>: 数据集中用于训练的样本比例，<code>validation_ratio</code>:  数据集中用于验证的样本比例，除训练集和验证集外，剩余的样本为测试集,训练集和验证集的总比例不能大于1。
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">DataFile</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">imagePath</span><span class="p">,</span> <span class="n">extensions</span><span class="p">,</span> <span class="n">training_ratio</span><span class="p">,</span> <span class="n">validation_ratio</span><span class="p">)</span>
+    <span class="o">...</span>
+</pre></div></p>
+</li>
+<li>
+<p>定义<code>resize_data</code>函数，用来读取训练集和测试集的label，以文件夹的名字为类别，在每个文件夹下面读取图片及其图片大小，扩展名。
+ <div class="codehilite"><pre><span></span>   <span class="o">...</span>
+   <span class="k">def</span> <span class="nf">resize_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resize_savepath</span><span class="p">,</span> <span class="n">shape</span><span class="p">):</span>
+   <span class="o">...</span>
+</pre></div></p>
+</li>
+<li>
+<p>在<code>rezised</code>文件夹下生成一个<code>.json</code>文件，用来记录训练数据、验证数据、测试数据、标签字典、训练集数量、验证集数量和测试集数量。（图片读取路径，标签，扩展名和识别后的类别）
+<div class="codehilite"><pre><span></span>    <span class="o">...</span>
+    <span class="k">return</span> <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Json file saved!&quot;</span><span class="p">)</span>
+</pre></div></p>
+</li>
+</ol>
+<hr />
+<h3 id="input">input接口<a class="headerlink" href="#input" title="Permanent link">&para;</a></h3>
+<ol>
+<li>定义一个类INPUT_DATA，类中定义了9个函数。
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">INPUT_DATA</span><span class="p">():</span>
+    <span class="o">...</span>
+</pre></div></li>
+<li>
+<p><code>__init__</code>函数：输入路径、扩展名、训练比率、验证比率、图片尺寸、类型。   <br />
+<div class="codehilite"><pre><span></span><span class="c1"># INPUT_DATA构造函数</span>
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filepath</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;.jpg&#39;</span><span class="p">,</span><span class="s1">&#39;.png&#39;</span><span class="p">],</span> <span class="n">training_ratio</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">validation_ratio</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;original&#39;</span><span class="p">)</span>
+</pre></div></p>
+</li>
+<li>
+<p><code>get_all_resized_data</code>函数和<code>get_all_original_data</code>函数分别用来获取原始数据集和经处理后图片大小为224*224的数据集信息（路径、扩展名、训练比率、验证比率和类型）。
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">get_all_resized_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="o">...</span>
+<span class="k">def</span> <span class="nf">get_all_original_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div></p>
+</li>
+<li>
+<p><code>get_training_data</code>函数、<code>get_validation_data</code>函数和<code>get_testing_data</code>函数分别用来获取训练数据，验证数据和测试数据。
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">get_training_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="o">...</span>
+<span class="k">def</span> <span class="nf">get_validation_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__get_training_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+    <span class="k">def</span> <span class="nf">get_validation_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+    <span class="k">def</span> <span class="nf">get_testing_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="o">...</span>
+</pre></div></p>
+</li>
+<li>
+<p><code>get_label</code>函数：用来获取分类标签字典。
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">get_label</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div></p>
+</li>
+<li>
+<p><code>cv_imread</code>函数：用来读取图片。
+ <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">cv_imread</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
+</pre></div></p>
+</li>
+<li>
+<p><code>input_original</code>函数和<code>input_resized</code>函数分别用来输入原始数据集和经处理后图片大小为224*224的数据集信息（路径、扩展名、训练比率、验证比率和类型）。
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">input_original</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span><span class="n">extension</span><span class="p">,</span><span class="n">traning_ratio</span><span class="p">,</span><span class="n">validation_ratio</span><span class="p">,</span><span class="n">shape</span><span class="p">):</span>
+    <span class="o">...</span>
+<span class="k">def</span> <span class="nf">input_resized</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span><span class="n">extension</span><span class="p">,</span><span class="n">training_ratio</span><span class="p">,</span><span class="n">validation_ratio</span><span class="p">,</span><span class="n">shape</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div></p>
+</li>
+</ol>
+<div class="admonition 注释">
+<p class="admonition-title">注释</p>
+<p><code>cv2.imread</code>亦可实现图像读取功能, 但文件路径不能包含中文字符.此处采用自定义的<code>cv_imread</code>函数,目的是支持对包含中文路径文件的读入.</p>
+</div>
+<hr />
+<h3 id="loss">loss接口<a class="headerlink" href="#loss" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>定义一个类：<code>LossHistory</code>，<code>Callback</code>:回调函数，保存每个<code>batch</code>的<code>loss</code>、<code>acc</code>、<code>val_loss</code>、<code>val_acc</code>的回调函数,保存每个<code>epoch</code>的<code>loss</code>、<code>acc</code>、<code>val_loss</code>、<code>val_acc</code>的回调函数。</p>
+</li>
+<li>
+<p>在每个<code>epoch</code>的结尾处（on_epoch_end），<code>logs</code>将包含训练的正确率和误差率,<code>acc</code>和<code>loss</code>，如果指定了验证集，还会包含验证集正确率和误差率<code>val_acc</code>, <code>val_loss</code>，<code>val_acc</code>还额外需要在<code>.compile</code>中启用<code>metrics=['accuracy']</code>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">on_epoch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">log</span><span class="o">+</span><span class="p">{}):</span>
+    <span class="o">...</span>
+</pre></div></p>
+</li>
+<li>在每个<code>batch</code>的结尾处（on_batch_end）：<code>logs</code>包含<code>loss</code>，若启用<code>accuracy</code>则还包含<code>acc</code>.
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">on_batch_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">logs</span><span class="o">+</span><span class="p">{}):</span>
+    <span class="o">...</span>
+</pre></div></li>
+<li>
+<p>定义一个函数<code>training_vis</code>：用来描绘训练过程。
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">training_vis</span><span class="p">(</span><span class="n">hist</span><span class="p">,</span> <span class="n">savename</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div></p>
+</li>
+<li>
+<p>分别用来绘制<code>loss</code>（<code>trainig_loss</code>和<code>val_loss</code>）和<code>acc</code>（<code>training_loss</code>和<code>val_loss</code>）值。
+<div class="codehilite"><pre><span></span><span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+</pre></div></p>
+</li>
+</ol>
+<hr />
+<h3 id="test_performance">test_performance接口<a class="headerlink" href="#test_performance" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>生成一个<code>.txt</code>文件，用来记录<code>precision_score</code>:准确率，<code>recall_score</code>：召回率，<code>f1_score</code>：统计学中用来衡量二分类模型精确度的一种指标，<code>classification_report</code>：分类报告，<code>confusion_matrix</code>:混淆矩阵。
+<div class="codehilite"><pre><span></span><span class="n">recorder_name</span> <span class="o">=</span> <span class="n">info_dict</span><span class="p">[</span><span class="s2">&quot;savepath&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;/record_&quot;</span><span class="o">+</span><span class="n">part_string</span><span class="o">+</span><span class="s2">&quot;.txt&quot;</span>
+</pre></div></p>
+</li>
+<li>
+<p>生成一个<code>.png</code>文件，将训练结果用一个混淆矩阵来表示。
+<div class="codehilite"><pre><span></span><span class="n">confusion_matrix_name</span> <span class="o">=</span> <span class="n">info_dict</span><span class="p">[</span><span class="s2">&quot;savepath&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;/test&quot;</span><span class="o">+</span><span class="s2">&quot;/confusion_matrix_&quot;</span><span class="o">+</span><span class="n">part_string</span><span class="o">+</span><span class="s2">&quot;.png&quot;</span>
+</pre></div></p>
+</li>
+<li>
+<p>定义一个函数：<code>plot_confusion_matrix</code>，用来绘制一个混淆矩阵，包含类别、矩阵和保存名。
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">plot_confusion_matrix</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span><span class="n">matrix</span><span class="p">,</span><span class="n">savename</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div></p>
+</li>
+</ol>
+<hr />
+<h3 id="optimizers_settings">optimizers_settings接口<a class="headerlink" href="#optimizers_settings" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>定义一个函数：<code>get_optimizer</code>，对优化器算法进行设定。
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">get_optimizer</span><span class="p">(</span><span class="n">info_dict</span> <span class="o">=</span> <span class="p">{}):</span>
+    <span class="o">...</span>
+</pre></div></p>
+</li>
+<li>
+<p><code>SGD</code>:随机梯度下降法，<code>RMSProp</code>: 能够解决Adagrad学习率急速下降问题;  <code>Adagrad</code>:自适应梯度算法;  <code>Adadelta</code>:对Adagrad的扩展；<code>Adam</code>:自适应矩估计法;  <code>Adamax</code>：（Adam的一种变体）;  <code>Nadam</code>:（类似于带有Nesterov动量项的Adam）。
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">keras.optimzers</span> <span class="kn">import</span> <span class="n">SGD</span><span class="p">,</span><span class="n">RMSprop</span><span class="p">,</span><span class="n">Adagrad</span><span class="p">,</span><span class="n">Adadelta</span><span class="p">,</span><span class="n">Adam</span><span class="p">,</span><span class="n">Adamax</span><span class="p">,</span><span class="n">Nadam</span>
+</pre></div></p>
+</li>
+<li>
+<p><code>lr</code>:学习率，<code>decay</code>:衰减率，<code>momentum</code>:动量。
+<div class="codehilite"><pre><span></span><span class="n">opt</span> <span class="o">=</span> <span class="n">SGD</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span><span class="n">decay</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span><span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">nesterov</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div></p>
+</li>
+<li>
+<p><code>lr</code>:学习率，<code>rho</code>：移动平均系数，<code>epsilon</code>:该参数是非常小的数，其为了防止在实现中除以0，阈值，用来确定是否进入检测值的“平原区”。
+<div class="codehilite"><pre><span></span><span class="n">opt</span> <span class="o">=</span> <span class="n">RMSprop</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span><span class="n">rho</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-06</span><span class="p">)</span>
+<span class="n">opt</span> <span class="o">=</span> <span class="n">Adagrad</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span><span class="n">rho</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-06</span><span class="p">)</span>
+<span class="n">opt</span> <span class="o">=</span> <span class="n">Adadelta</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span><span class="n">rho</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+</pre></div></p>
+</li>
+<li>
+<p><code>lr</code>:学习率，<code>beta_1</code>：一阶矩估计的指数衰减率，<code>beta_2</code>: 二阶矩估计的指数衰减率， <code>decay</code>:衰减率。
+<div class="codehilite"><pre><span></span><span class="n">opt</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span><span class="n">beta_1</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">beta_2</span><span class="o">=</span><span class="mf">0.999</span><span class="p">,</span><span class="n">epsilon</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span><span class="n">decay</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="n">amsgrad</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">opt</span> <span class="o">=</span> <span class="n">Adamax</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.002</span><span class="p">,</span><span class="n">beta_1</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">beta_2</span><span class="o">=</span><span class="mf">0.999</span><span class="p">,</span><span class="n">epsilon</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span><span class="n">decay</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">opt</span> <span class="o">=</span> <span class="n">Nadam</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.002</span><span class="p">,</span><span class="n">beta_1</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">beta_2</span><span class="o">=</span><span class="mf">0.999</span><span class="p">,</span><span class="n">epsilon</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span><span class="n">schedule_decay</span><span class="o">=</span><span class="mf">0.004</span><span class="p">)</span>
+</pre></div></p>
+</li>
+</ol>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../.." title="主页" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                主页
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../opencv/cheatsheet/" title="OpenCV CheatSheet" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                OpenCV CheatSheet
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      
+        
+        
+          
+          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+          
+            
+              
+                <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+            <script src="../../../assets/javascripts/lunr/lunr.multi.js"></script>
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="../../../js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
