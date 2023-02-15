@@ -1,0 +1,9 @@
+diff a/docs/2019_summer/Unity/FreewayEquipment.md b/docs/2019_summer/Unity/FreewayEquipment.md	(rejected hunks)
+@@ -257,6 +257,7 @@
+ 
+ 图 12为数据库导出的数据样表。数据表包含多个属性，本资源包主要关注属性ID（设备编号）、SPECIFICATION_ID（设备类型）、POSITION（桩号）、AREA（安布设方向）、NAME（名称）。数据读入后，程序会根据SPECIFICATION_ID匹配设备预制体进行实例化，因此，数据读入前，首先需要查看所有记录的SPECIFICATION_ID是否满足需要（即查看SPECIFICATION_ID是否都能够对应<MultiDeviceDeploy>中枚举的设备预制体名称，若没有则需要修改编码，例如导出数据的情报板SPECIFICATION_ID均为VMS，为了进一步区分情报板类型，导入数据前将SPECIFICATION_ID根据标注名称细分为悬挂式VMS_H、龙门架式VMS_G、F式VMS_F）。  
+ 
++[数据库导出表样例](https://pan.baidu.com/s/1ITNUriUpOT0Tq_OKgcOoCw)  
+ 提取码:8tl6  
+ 
+ 

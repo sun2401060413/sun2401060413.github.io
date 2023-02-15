@@ -1,0 +1,973 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="云笔记">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.2">
+    
+    
+      
+        <title>Densenet - 培训资料</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e8d9bf0c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#densenet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="培训资料" class="md-header__button md-logo" aria-label="培训资料" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            培训资料
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Densenet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="培训资料" class="md-nav__button md-logo" aria-label="培训资料" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    培训资料
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          2019 summer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2019 summer" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          2019 summer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Unity
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Unity" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Unity
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Unity/FreewayEquipment/" class="md-nav__link">
+        FreewayEquipment
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Deeplearning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Deeplearning" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Deeplearning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alexnet/" class="md-nav__link">
+        Alexnet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classification/" class="md-nav__link">
+        Classification 接口
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Densenet
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Densenet
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#densenet" class="md-nav__link">
+    使用densenet训练网络
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    程序使用的网络接口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpu" class="md-nav__link">
+    gpu的设置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#densenet_1" class="md-nav__link">
+    densenet网络模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    生成记录文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    使用程序修改的语句
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        资料
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Opencv
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Opencv" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Opencv
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../opencv/cheatsheet/" class="md-nav__link">
+        OpenCV CheatSheet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../opencv/opencv/" class="md-nav__link">
+        OpenCV 培训
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../opencv/video2image/" class="md-nav__link">
+        opencv 常用程序（一）
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Auto driving
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Auto driving" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Auto driving
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../auto-driving/Readme/" class="md-nav__link">
+        车路协同自动驾驶资料搜集
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Resume
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Resume" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Resume
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resume/EnvirDetection/" class="md-nav__link">
+        高速公路环境状态辨识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resume/HZMB/" class="md-nav__link">
+        三维数字孪生应急演练系统
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#densenet" class="md-nav__link">
+    使用densenet训练网络
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    程序使用的网络接口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpu" class="md-nav__link">
+    gpu的设置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#densenet_1" class="md-nav__link">
+    densenet网络模型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    生成记录文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    使用程序修改的语句
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>Densenet</h1>
+
+<details class="info">
+<summary>版本信息</summary>
+<p>Created by 卓叶迪 2019-10-12 20:07 Version 1.0.1    </p>
+<p>Last Update：2019-10-13 16:31  by 孙铸</p>
+<ul>
+<li>修改文档内容;</li>
+</ul>
+</details>
+<h3 id="densenet">使用densenet训练网络<a class="headerlink" href="#densenet" title="Permanent link">&para;</a></h3>
+<p>1.由于网络要求输入图片的尺寸是224*224，所以需要先使用Datalist程序对图片进行resized：</p>
+<div class="highlight"><pre><span></span><code><span class="n">d</span> <span class="o">=</span> <span class="n">DataFile</span><span class="p">(</span><span class="n">imagePath</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;E:\output\data&#39;</span><span class="p">,</span><span class="n">extensions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;.png&#39;</span><span class="p">],</span> <span class="n">training_ratio</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">validation_ratio</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="c1">#imagepath为修改的图片的路径</span>
+<span class="c1">#extensions为读取的文件类型拓展名，这里为图片类型‘png’.‘jpg’</span>
+<span class="c1">#training_ratio 训练数据的比例</span>
+<span class="c1">#validation_ratio 验证数据的比例</span>
+<span class="c1">#一般设置训练：测试：验证的比例为0.8：0.1：0.1</span>
+<span class="n">d</span><span class="o">.</span><span class="n">resize_data</span><span class="p">(</span><span class="s1">&#39;E:/output/resized&#39;</span><span class="p">,</span> <span class="mi">224</span><span class="p">)</span>
+<span class="c1">#设置保存路径，resize尺寸为224</span>
+</code></pre></div>
+<h3 id="_1">程序使用的网络接口<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>densenet网络引用的函数  </p>
+</blockquote>
+<ol>
+<li>callbacks：Callbacks用于指定在每个epoch开始和结束的时候进行哪种特定操作。Callbacks中有一些设置好的接口，可以直接使用，如’acc’, 'val_acc’, ’loss’ 和 ’val_loss’等.</li>
+</ol>
+<p>2.EarlyStopping：EarlyStopping是Callbacks的一种，是用于提前停止训练的callbacks。</p>
+<div class="highlight"><pre><span></span><code><span class="n">earlystop</span> <span class="o">=</span> <span class="n">EarlyStopping</span><span class="p">(</span><span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;val_loss&#39;</span><span class="p">,</span> <span class="n">min_delta</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">patience</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  #monitor: 监控的数据接口，有’acc’,’val_acc’,’loss’,’val_loss’等等。</span>
+<span class="sd">  min_delta：增大或减小的阈值，只有大于这个部分才算作improvement。</span>
+<span class="sd">  patience：能够容忍多少个epoch内都没有improvement。</span>
+<span class="sd">  mode: 就’auto’, ‘min’, ‘,max’三个可能。设置上升的监控数据，&#39;acc&#39;,可设置mode=&#39;max&#39;</span>
+<span class="sd">  verbose：日志显示，0为不在标准输出流输出日志信息，1为输出进度条记录，2为每个epoch输出一行记录 </span>
+<span class="sd">&#39;&#39;&#39;</span> 
+</code></pre></div>
+<p>3.ZeroPadding2D函数</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">ZeroPadding2D</span><span class="p">(</span><span class="n">padding</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;pool1_zeropadding&#39;</span><span class="p">)</span>
+<span class="c1">#(1, 1)会在行和列的最前和最后都增加一行0</span>
+</code></pre></div>
+<p>4.Dense（全连接层）</p>
+<div class="highlight"><pre><span></span><code><span class="n">x_fc</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;fc6&#39;</span><span class="p">)(</span><span class="n">x_fc</span><span class="p">)</span>
+<span class="c1">#1000代表1000个输出（densenet网络的定的参数）</span>
+</code></pre></div>
+<p>5.Dropout（过拟合）</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">Dropout</span><span class="p">(</span><span class="n">dropout_rate</span><span class="p">)</span>
+<span class="c1">#为输入数据施加Dropout。Dropout将在训练过程中每次更新参数时随机断开一定百分比（dropout_rate(0~1))）的输入神经元连接，Dropout层用于防止过拟合。</span>
+</code></pre></div>
+<p>6.Activation（激活函数）</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">Activation</span><span class="p">(</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;relu1&#39;</span><span class="p">)</span>
+<span class="c1">#第一个参数为激活函数，程序选择了&#39;relu&#39;激活函数。</span>
+</code></pre></div>
+<p>7.Concatenate（连接函数）</p>
+<div class="highlight"><pre><span></span><code><span class="n">concat_feat</span> <span class="o">=</span> <span class="n">Concatenate</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">concat_axis</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;concat_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">stage</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">branch</span><span class="p">))([</span><span class="n">concat_feat</span><span class="p">,</span> <span class="n">x</span><span class="p">])</span>
+<span class="c1">#axis参数axis设置连接的维度，根据维度方式选择确定</span>
+<span class="n">见</span><span class="p">[</span><span class="n">注释</span><span class="p">]</span>
+</code></pre></div>
+<p>8.Conv2D（卷积层）</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">Conv2D</span><span class="p">(</span><span class="n">nb_filter</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">strides</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;conv1&#39;</span><span class="p">,</span> <span class="n">use_bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1">#nb_filter为卷积核的数目</span>
+<span class="c1"># (7, 7)为卷积核的尺寸</span>
+<span class="c1">#use_bias=False代表不使用偏置</span>
+</code></pre></div>
+<p>9.MaxPooling2D（池化层）</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">strides</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;pool1&#39;</span><span class="p">)</span>
+<span class="c1">#(3, 3)池化的尺寸</span>
+<span class="c1">#strides=(2, 2)池化步长</span>
+</code></pre></div>
+<p>10.BatchNormalization（正则化）</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">BatchNormalization</span><span class="p">(</span><span class="n">epsilon</span><span class="o">=</span><span class="n">eps</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">concat_axis</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;conv1_bn&#39;</span><span class="p">)</span>
+<span class="c1">#epsilon为大于0的小浮点数，用于防止除0错误</span>
+<span class="c1">#axis: 整数，指定要规范化的轴，通常为特征轴。</span>
+</code></pre></div>
+<hr />
+<div class="admonition info">
+<p class="admonition-title">注释</p>
+<p>在7中提到了维度方式的选择，维度方式主要有'tf''th'两种，关于维度方式的介绍如下：
+<div class="highlight"><pre><span></span><code><span class="n">K</span><span class="o">.</span><span class="n">image_dim_ordering</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;tf&#39;</span>
+<span class="c1">#选择&#39;tf&#39;维度方式，参数顺序为(samples, height, width, channels)</span>
+<span class="c1">#选择&#39;th&#39;维度方式,参数顺序为(samples , channels，height, width)</span>
+</code></pre></div></p>
+</div>
+<hr />
+<h3 id="gpu">gpu的设置<a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h3>
+<p>1.gpu的选择</p>
+<div class="highlight"><pre><span></span><code><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CUDA_VISIBLE_DEVICES&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;0,1,2,3&#39;</span>
+<span class="c1">#设置选用几号gpu，后输入对应的编码</span>
+</code></pre></div>
+<p>2.gpu设置参数</p>
+<div class="highlight"><pre><span></span><code><span class="n">config</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">ConfigProto</span><span class="p">()</span>
+<span class="n">config</span><span class="o">.</span><span class="n">gpu_options</span><span class="o">.</span><span class="n">per_process_gpu_memory_fraction</span> <span class="o">=</span> <span class="mf">0.888</span>     
+<span class="c1">#设置使用88.8%的显存</span>
+<span class="n">config</span><span class="o">.</span><span class="n">gpu_options</span><span class="o">.</span><span class="n">allow_growth</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="c1">#动态申请显存</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+<span class="n">set_session</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="densenet_1">densenet网络模型<a class="headerlink" href="#densenet_1" title="Permanent link">&para;</a></h3>
+<p>1.定义densenet169_model所需的参数:
+    - nb_dense_block: number of dense blocks to add to end
+    - growth_rate: number of filters to add per dense block
+    - nb_filter: initial number of filters
+    - reduction: reduction factor of transition blocks
+    - dropout_rate: dropout rate
+    - weight_decay: weight decay factor
+    - classes: optional number of classes to classify images
+    - weights_path: path to pre-trained weights</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">densenet169_model</span><span class="p">(</span><span class="n">img_rows</span><span class="p">,</span> <span class="n">img_cols</span><span class="p">,</span><span class="n">color_type</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nb_dense_block</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">growth_rate</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">nb_filter</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">dropout_rate</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">weight_decay</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weights_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">info_dict</span><span class="o">=</span><span class="p">{})</span><span class="err">：</span>
+</code></pre></div>
+<p>2.定义conv_block所需的参数:
+    - x: input tensor输入数量
+    - stage: index for dense block——dense block的数
+    - branch: layer index within each dense block--每个dense block的层数
+    - nb_filter: number of filters--卷积核数
+    - dropout_rate: dropout rate--dropout率
+    - weight_decay: weight decay factor--权重衰减</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">conv_block</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">stage</span><span class="p">,</span> <span class="n">branch</span><span class="p">,</span> <span class="n">nb_filter</span><span class="p">,</span> <span class="n">dropout_rate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight_decay</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">):</span>
+</code></pre></div>
+<p>3.定义transition_block所需的参数：
+    - x: input tensor
+    - stage: index for dense block
+    - nb_filter: number of filters
+    - compression: calculated as 1 - reduction. Reduces the number of feature maps in the transition block.
+    - dropout_rate: dropout rate
+    - weight_decay: weight decay factor</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">transition_block</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">stage</span><span class="p">,</span> <span class="n">nb_filter</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">dropout_rate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight_decay</span><span class="o">=</span><span class="mf">1E-4</span><span class="p">):</span>
+</code></pre></div>
+<p>4.定义dense_block所需的参数:
+    - x: input tensor
+    - stage: index for dense block
+    - nb_layers: the number of layers of conv_block to append to the model.
+    - nb_filter: number of filters
+    - growth_rate: growth rate
+    - dropout_rate: dropout rate
+    - weight_decay: weight decay factor
+    - grow_nb_filters: flag to decide to allow number of filters to grow</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">dense_block</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">stage</span><span class="p">,</span> <span class="n">nb_layers</span><span class="p">,</span> <span class="n">nb_filter</span><span class="p">,</span> <span class="n">growth_rate</span><span class="p">,</span> <span class="n">dropout_rate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weight_decay</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">grow_nb_filters</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</code></pre></div>
+<h3 id="_2">生成记录文件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>1.生成.txt日志文件，用来记录训练参数：mode、filepath、savepath、weightpath、batch_size、extension、training_ratio、validation_ratio、size、channels、input_mode、epoches、classname、training samples、validate samples、test samples、Totally time cost、Test score和Test accuracy。</p>
+<div class="highlight"><pre><span></span><code><span class="n">recorder_name</span> <span class="o">=</span> <span class="n">info_dict</span><span class="p">[</span><span class="s2">&quot;savepath&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;/training_log_&quot;</span> <span class="o">+</span> <span class="n">part_string</span> <span class="o">+</span> <span class="s2">&quot;.txt&quot;</span>
+<span class="c1">#savepath是变量名，在修改部分统一设置。</span>
+</code></pre></div>
+<p>2.生成记录loss和acc的表格.csv路径。</p>
+<div class="highlight"><pre><span></span><code><span class="n">csv_savename</span> <span class="o">=</span> <span class="n">info_dict</span><span class="p">[</span><span class="s2">&quot;savepath&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="s2">&quot;Densenet_169_&quot;</span> <span class="o">+</span> <span class="n">part_string</span> <span class="o">+</span> <span class="s2">&quot;_loss.csv&quot;</span>
+</code></pre></div>
+<p>3.生成模型的.h5文件</p>
+<div class="highlight"><pre><span></span><code><span class="n">model_savename</span> <span class="o">=</span> <span class="n">info_dict</span><span class="p">[</span><span class="s2">&quot;savepath&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="s2">&quot;Densenet_169_&quot;</span> <span class="o">+</span> <span class="n">part_string</span> <span class="o">+</span> <span class="s2">&quot;_model.h5&quot;</span>
+</code></pre></div>
+<p>4.生成记录loss和acc的.png文件</p>
+<div class="highlight"><pre><span></span><code><span class="n">fig_savename</span> <span class="o">=</span> <span class="n">info_dict</span><span class="p">[</span><span class="s2">&quot;savepath&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="s2">&quot;Densenet_169_&quot;</span> <span class="o">+</span> <span class="n">part_string</span> <span class="o">+</span> <span class="s2">&quot;.png&quot;</span>
+</code></pre></div>
+<h3 id="_3">使用程序修改的语句<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>1.测试结果保存路径的修改</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">Y_predict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+<span class="c1">#测试时测试结果为0，自动分类到设置的文件夹</span>
+<span class="mi">1</span><span class="n">pred</span> <span class="o">=</span> <span class="n">X_valid</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">pred_img</span> <span class="o">=</span> <span class="n">array_to_img</span><span class="p">(</span><span class="n">pred</span><span class="p">)</span>
+<span class="n">pred_img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;E:/new15/test/f0/&#39;</span> <span class="o">+</span> <span class="s1">&#39;new&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;_T.&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Y_actual</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;_P.&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Y_predict</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;.jpg&#39;</span><span class="p">)</span>
+<span class="c1">#此部分可以更改测试结果为&#39;0&#39;分类的路径</span>
+<span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
+<p>2.测试的输入输出设置</p>
+<p>为了程序使用的方便，程序前部分都使用了变量名的方式，此处修改可以更改整个程序对应的变量。</p>
+<div class="highlight"><pre><span></span><code><span class="n">input_dict</span><span class="o">=</span> <span class="p">{}</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;mode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;train&quot;</span> 
+<span class="c1">#训练模式设置为&#39;train&#39;，测试模式设置为&#39;test&#39;</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;filepath&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;E:/jam/data7/resized&#39;</span>
+<span class="c1">#读入的文件路径设置</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;savepath&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;E:/jam/data7/results&#39;</span>
+<span class="c1">#保存结果的路径设置</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;weightpath&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;E:/program/CNN/keras_weights&#39;</span>
+<span class="c1">#权重路径，训练模式为下载好的训练权重；测试模式时为训练的模型</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;batch_size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span> 
+<span class="c1">#同时处理的图片个数</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;extension&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;.png&quot;</span><span class="p">]</span>
+<span class="c1">#读取的文件的类型格式</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;training_ratio&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.8</span>  
+<span class="c1">#训练比例一般0.8：0.1：0.1</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;validation_ratio&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="c1">#验证比例为0.1</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">224</span>  
+<span class="c1">#图片的尺寸</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;channels&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>  
+<span class="c1">#图片的通道</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;epoches&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>  
+<span class="c1">#迭代次数</span>
+<span class="n">input_dict</span><span class="p">[</span><span class="s2">&quot;classname&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">]</span>
+<span class="c1">#设置分类类名，尽量不用英文</span>
+</code></pre></div>
+<hr />
+<div class="admonition info">
+<p class="admonition-title">注释</p>
+<p>运行程序时候会自动读入文件路径的Json文件，为了不影响程序的运行，需要提前删除设置的Json文件。</p>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../classification/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Classification 接口" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Classification 接口
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../references/" class="md-footer__link md-footer__link--next" aria-label="Next: 资料" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              资料
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.9f3ca3d1.min.js"></script>
+      
+        <script src="../../../js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
