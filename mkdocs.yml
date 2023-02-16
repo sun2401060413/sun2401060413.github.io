@@ -1,0 +1,45 @@
+site_name: 培训资料
+theme: material
+extra:
+    search:
+        language: 'en,ja'
+
+site_description: '云笔记'
+docs_dir: docs
+site_dir: site
+page:
+    - 主页: index.md
+    - 培训:
+        - OpenCV: opencv.md
+        - CheatSheet: cheatsheet.md
+        - video2image: video2image.md
+        - Classification: classification.md
+extra_javascript:
+    - 'js/extra.js'
+    - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: false
+  - toc:
+      permalink: true
+  - footnotes
+  - meta
+  - def_list
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_png
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
