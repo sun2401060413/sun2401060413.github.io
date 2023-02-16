@@ -860,7 +860,7 @@
 * 首次创建在线手册;</p>
 </details>
 <h2 id="_1">资源包简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><img alt="FreewayEquipment 资源包示例场景" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200722225637.png" /></p>
+<p><img alt="FreewayEquipment 资源包示例场景" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200722225637.png" /></p>
 <p>图 1 FreewayEquipment 资源包示例场景</p>
 <p>FreewayEquipment 是一个基于Unity框架进行高速公路场景交通系统控制仿真开发设计的资源包。主要特点：  </p>
 <ul>
@@ -888,7 +888,7 @@
 <p>进入Unity，点击菜单栏【Asset】-【import Package】-【custom package】，选择资源包导入。</p>
 <h3 id="_4">示例运行<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>可通过双击Project框中Asset/Scenes下的SampleScene，打开示例场景。场景包含地形对象【DaWuTunnelTerrain】，隧道模型对象【DaWuTunnelModel】，道路对象【Road Network】，交通流对象【Traffic】，设备信息管理器【Controller】,设备对象组【Devices】,绑定设备信息管理器【Binders】，绑定设备对象组【BinderDevices】,Socket通信服务器端【SocketServ】,数据载入器【DataLoader】等对象。</p>
-<p><img alt="图 2 Demo场景层级结构" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200722230706.png" /></p>
+<p><img alt="图 2 Demo场景层级结构" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200722230706.png" /></p>
 <p>图 2 Demo场景层级结构  </p>
 <p>场景中的设备对象在Hierachy框中的Devices下。可通过手动调整控制各设备脚本变量实现控制效果，也可以通过Socket通信方式实现远程控制。各设备控制码如表 1所示。</p>
 <p>表 2 设备控制码</p>
@@ -1157,7 +1157,7 @@
 </div>
 <h3 id="_7">创建功能对象管理工具<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>资源成功载入Unity后，会在菜单栏中增加“FETools”菜单。通过点击FETools—ToolManager—Demo，可创建功能对象管理工具，用于按照步骤设置可以与监控系统交互的场景功能部件对象。功能对象管理工具创建后，会在Hierachy中添加一个名为“FEToolManager”的对象，并挂载<CreateTools>脚本。</p>
-<p><img alt="功能对象管理工具的创建" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200722233114.png" /></p>
+<p><img alt="功能对象管理工具的创建" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200722233114.png" /></p>
 <p>图 3  功能对象管理工具的创建</p>
 <p><CreateTools>脚本可编辑内容如   图 4所示。填入需要引用的参数，脚本可按照步骤生成以下功能对象：</p>
 <ul>
@@ -1180,7 +1180,7 @@
 <p><strong>示例界面UI</strong>：即配合摄像机浏览模式选择的示例界面。创建后会在Hierachy中添加一个名为“6-DemoCanvas”的功能对象。</p>
 </li>
 </ul>
-<p><img alt="CreateTools脚本可编辑内容" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200722233310.png" /></p>
+<p><img alt="CreateTools脚本可编辑内容" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200722233310.png" /></p>
 <p>图 4 CreateTools脚本可编辑内容</p>
 <p>为一定程度减少功能对象生成后的配置工作量，使用<CreateTools>脚本创建功能对象前，尽量先配置好脚本预设的参考引用变量（Roadtraffic，RoadUpward，RoadDownward），变量配置说明如下：</p>
 <ul>
@@ -1196,7 +1196,7 @@
 </ul>
 <h3 id="_8">桩号生成管理器<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>桩号生成管理器可由功能对象管理工具（FEToolManager）的STEP1创建，也可以通过菜单栏FETools—ToolManager—RoadMileageSetter创建。桩号生成管理器包含两个脚本<RoadMileageSetting>和<SingleDeviceDeploy>。其中<RoadMileageSetting>即路径桩号生成功能的实现脚本，<SingleDeviceDeploy>即在生成路径桩号的基础上，按照桩号自动布设单个设备的功能脚本。若要实现批量设备自动布设，此功能对象中的<RoadMileageSetting>和<SingleDeviceDeploy>脚本都是必需的。  </p>
-<p><img alt="图 5 桩号生成管理器可编辑内容" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200723091649.png" /><br />
+<p><img alt="图 5 桩号生成管理器可编辑内容" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200723091649.png" /><br />
 图 5 桩号生成管理器可编辑内容<br />
 图 5展示了桩号生成管理器所包含两个脚本的可编辑内容。可编辑内容的配置说明如下：  </p>
 <ul>
@@ -1210,13 +1210,13 @@
 <li>为了便于设备设施自动布设，路径对象最好沿着道路路面的中心线。  </li>
 </ol>
 </div>
-<p><img alt="图 6 路径对象点集三层结构示例" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200723091844.png" /><br />
+<p><img alt="图 6 路径对象点集三层结构示例" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200723091844.png" /><br />
 图 6 路径对象点集三层结构示例</p>
 <p><strong>Ref_pt</strong>：定位参考点，可选择路径对象点集内具有标志性的位置作为参考点（即已可匹配桩号的位置点），如隧道洞口、道路分岔口等（可通过双击点对象在场景Scene中查看），方便根据参考点设置桩号。  </p>
 <p><strong>Ref_pt_value</strong>：参考点桩号数值，单位以米计量，例如桩号“K1531+231”或“K1531.231”需要设置桩号数值为1531231。  </p>
 <p><strong>IsIncrease</strong>：桩号增/减（上行/下行）方向设置。IsIncrease设置勾选时，沿行车方向桩号逐渐增大；IsIncrease不勾选时，沿行车方向桩号逐渐减小。  </p>
 <p><strong>Pts_miles</strong>：根据设置变量生成的点集桩号对应表。以上变量内容均设置完成后，点击“计算桩号”，计算结果即存放在Pts_miles中（如图 7）。  </p>
-<p><img alt="图 7 路径对象点集生成桩号列表" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200723092021.png" /><br />
+<p><img alt="图 7 路径对象点集生成桩号列表" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200723092021.png" /><br />
 图 7 路径对象点集生成桩号列表  </p>
 <ul>
 <li>SingleDeviceDeploy  </li>
@@ -1225,17 +1225,17 @@
 <p><strong>Obj</strong>：选择资源包内的预制体设备（资源路径：Assets/FreewayEquipment/Prefabs/…，预制体文件后缀：.prefab）；  </p>
 <p><strong>Mileage</strong>：设备设施布设桩号数值，单位以米计量。  </p>
 <p><strong>Offset</strong>：设备设施布设偏置，由设定Mileage数值计算得到的点在选择引用的路径对象上，对于路侧或者路面上方的设置，可通过Offset调整最终设备设施布设的位置，偏置位置由三维向量表示，其中，X表示前向偏置，以行车方向为正；Y表示高度偏置，以上为正；Z表示左右偏置，以右为正。  </p>
-<p><img alt="图 8 SingleDeviceDeploy脚本可编辑内容" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200723092209.png" /><br />
+<p><img alt="图 8 SingleDeviceDeploy脚本可编辑内容" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200723092209.png" /><br />
 图 8 SingleDeviceDeploy脚本可编辑内容  </p>
 <h3 id="socket">Socket通信服务端<a class="headerlink" href="#socket" title="Permanent link">&para;</a></h3>
-<p><img alt="图 9 SocketServ脚本接口变量" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200723092302.png" /><br />
+<p><img alt="图 9 SocketServ脚本接口变量" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200723092302.png" /><br />
 图 9 SocketServ脚本接口变量  </p>
 <p>Socket通信服务端SocketServer功能对象挂载了<ServSocket>脚本，其中，ServSocket默认ip为本机环回地址，端口10010。如果没有特殊需要，一般可以不用修改。若在编辑中修改了地址和端口号，需要向有联动需求的应用提供此配置信息。一个模拟场景中，仅需配置一个Socket通信服务端。  </p>
 <h3 id="_9">设备事件管理器<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>本资源包将设备管理和事件管理分为两个功能对象，即Devices和Controller。其中，Devices的主要功能即将实例化的设备作为子对象存放，方便管理。Controller的主要功能即管理设备信息，并通过Socket通信匹配待控制设备，触发设备动作。Controller中挂载了<EventTrigger>脚本（注：此EventTrigger脚本为命名空间sz.network中的事件触发器，而非UnityEngine中的事件触发器）。功能脚本变量内容如图 10所示。  </p>
 <p><strong>Socket_Serv</strong>：用于事件触发控制的Socket通信服务端对象。  </p>
 <p><strong>GameEvent</strong>：用于事件触发控制的设备信息。脚本事件触发功能执行时，通过设备类型、设备编号匹配待控制设备的实例化对象。此信息可通过DataLoader功能对象从数据库导出数据读入，亦可自定义设备信息。自定义设备信息时，通过修改GameEvent变量的size增加设备信息记录（增加一条记录时，设置size为原有size数值加1）。填写设备信息时，设备Title可随意填写，其内容与设备匹配无关，但最好与Devices中实例化设备的名称一致，方便管理。Devicetype（设备类型）与id（设备编号）应与联动监控系统中对应待控制设备的类型与编号一致，Controller应设置场景中实例化的设备对象。  </p>
-<p><img alt="图 10 Controller预制体脚本变量接口" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200723092420.png" />  </p>
+<p><img alt="图 10 Controller预制体脚本变量接口" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200723092420.png" />  </p>
 <p>图 10 Controller预制体脚本变量接口  </p>
 <h3 id="_10">数据载入器<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>数据载入器挂载了<DeviceInfoLoaderXLS>和<MultiDeviceDeploy>两个功能脚本。其中，<DeviceInfoLoaderXLS>脚本主要用于从*.xls或*.xlsx文件中读取设备信息。<MultiDeviceDeploy>脚本主要用于根据<DeviceInfoLoaderXLS>读入的设备信息，实例化设备预制体并布设在设备信息中保存的位置，同时将设备信息添加到EventTrigger中。  </p>
@@ -1253,17 +1253,17 @@
 <p><strong>各类设备预制体</strong>：各类待实例化设备类型所使用的预制体设备模型。  </p>
 <p><strong>各类设备安装偏置</strong>：各类待实例化设备类型在实例化时的布设偏置。  </p>
 <p>以上配置完成后，点击“设备部署”，实例化的设备会添加到ObjParent设置的功能对象下；实例化的设备信息存在EventTrigger中的GameEvent中。  </p>
-<p><img alt="图 11 数据读入器可编辑内容" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200723092635.png" /><br />
+<p><img alt="图 11 数据读入器可编辑内容" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200723092635.png" /><br />
 图 11 数据读入器可编辑内容  </p>
 <p>图 12为数据库导出的数据样表。数据表包含多个属性，本资源包主要关注属性ID（设备编号）、SPECIFICATION_ID（设备类型）、POSITION（桩号）、AREA（安布设方向）、NAME（名称）。数据读入后，程序会根据SPECIFICATION_ID匹配设备预制体进行实例化，因此，数据读入前，首先需要查看所有记录的SPECIFICATION_ID是否满足需要（即查看SPECIFICATION_ID是否都能够对应<MultiDeviceDeploy>中枚举的设备预制体名称，若没有则需要修改编码，例如导出数据的情报板SPECIFICATION_ID均为VMS，为了进一步区分情报板类型，导入数据前将SPECIFICATION_ID根据标注名称细分为悬挂式VMS_H、龙门架式VMS_G、F式VMS_F）。  </p>
 <p><a href="https://pan.baidu.com/s/1ITNUriUpOT0Tq_OKgcOoCw">数据库导出表样例</a><br />
 提取码:8tl6  </p>
-<p><img alt="图 12 数据库导出表样例" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/Snipaste_2020-07-23_16-55-54.png" /><br />
+<p><img alt="图 12 数据库导出表样例" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200723172754.pn" /><br />
 图 12 数据库导出表样例  </p>
 <h3 id="_11">自定义摄像机<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>为了构建场景不同展示模式效果，本资源包根据应用需要自定义了摄像机对象。摄像机对象可进行漫游模式、驾驶模式、巡线模式进行场景的展示，同时可以对场景的天气状态效果进行处理展示。自定义摄像机可通过功能对象管理工具（FEToolsManager）创建，也可以通过菜单栏FETools—CamController—CamPlayer创建。  </p>
 <p>功能对象Camplayer的漫游模式，驾驶模式，巡线模式等展示模式分别使用了<MouseLookAdvance><DriveMode>和<MoveAlongRoad>功能脚本。脚本可编辑内容见图 13。  </p>
-<p><img alt="图 13 CamPlayer功能对象可配置内容" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200723092739.png" /><br />
+<p><img alt="图 13 CamPlayer功能对象可配置内容" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200723092739.png" /><br />
 图 13 CamPlayer功能对象可配置内容  </p>
 <ul>
 <li>DriverMode  </li>
@@ -1277,16 +1277,16 @@
 <p><strong>Offset</strong>：摄像机位置偏置。  </p>
 <h3 id="_12">摄像机展示模式交互界面<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p>摄像机展示模式控制界面如图 14所示，图中展示了摄像机的三种展示模式。从左至右分别为漫游模式、驾驶模式、巡线模式的展示效果。其中，漫游模式可以上帝视角漫游查看场景的任意对象；驾驶模式可跟随指定路径上的任意车辆，以司机视移动查看场景；巡线模式可通过拖动滑动条查看道路任意位置场景。示例界面可通过功能对象管理工具创建，也可以通过菜单栏FTTools—UI—DemoUI创建。  </p>
-<p><img alt="图 14 摄像机展示模式效果" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200723092851.png" /><br />
+<p><img alt="图 14 摄像机展示模式效果" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200723092851.png" /><br />
 图 14 摄像机展示模式效果   </p>
 <p>示例场景摄像机控制模式界面如图 15所示，大多数变量为UI功能对象，已提前配好，可直接使用。需要根据项目配置的变量为：  </p>
 <p><strong>MainCam</strong>：资源包自定义摄像机对象；  </p>
 <p><strong>WeatherSetUI</strong>：有天气控制效果时，此值需要引用天气控制界面。   </p>
-<p><img alt="图 15 示例界面DemoCanvas可编辑内容" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200723092946.png" /><br />
+<p><img alt="图 15 示例界面DemoCanvas可编辑内容" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200723092946.png" /><br />
 图 15 示例界面DemoCanvas可编辑内容  </p>
 <h3 id="binder">Binder绑定控制器<a class="headerlink" href="#binder" title="Permanent link">&para;</a></h3>
 <p>为了减小场景设计中设备布设的工作量，可将多个设备进行绑定控制，此方式需要用到Binder绑定控制器。Binder控制器可通过菜单栏FETools—ToolManager—Binder创建。每个主从控制关系设备群组均需一个Binder绑定控制器。如隧道照明系统以回路为单位进行控制，因此每个照明回路均需要一个Binder绑定控制器。  </p>
-<p><img alt="图 16 Binder控制器可编辑变量" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200723093054.png" /><br />
+<p><img alt="图 16 Binder控制器可编辑变量" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200723093054.png" /><br />
 图 16 Binder控制器可编辑变量  </p>
 <p>绑定控制需要通过<BinderControl>脚本实现，需要设置Master和Slavers。其中，Master为主控设备，Slavers为从控设备，即对主控设备进行控制，与主控设备绑定的从控设备会根据主控设备控制信息变化。从控设备可根据需要设置一个或多个。  </p>
 <div class="admonition 注意">
@@ -1303,9 +1303,9 @@
 <p><strong>Start，End</strong>：隧道的起点桩号和终点桩号。此信息会用于不同照明区域灯具布设的位置计算。  </p>
 <p><strong>Parent</strong>：生成灯具实例化对象的存放父节点对象，方便管理。  </p>
 <p><strong>Group_list</strong>：照明区域设置。不同照明区域对灯具布设的长度、间隔设置不同，灯具布设前需要提前按照需要设置照明区域。照明区域设置时，按照从入口到出口的顺序，依次将照明区域信息录入Group_list。Group_list记录中的变量：<strong>Name</strong>：照明区域名称，如：入口基本段、入口过渡段、基本段、出口过渡段、出口基本段。<strong>Class_code</strong>：照明区域类型编码，此类型主要用于灯具布设的位置计算。灯具布设时，入口段的灯具以隧道起点为基点按照区域顺序依次计算，出口段的灯具以隧道终点为基点按照照明区域的反向顺序逆序依次计算，入口段和出口段计算完成剩余的区域为基本段。<strong>Length</strong>：照明区域的长度，单位m。<strong>space</strong>：灯具的布设间隔，单位m。  </p>
-<p><img alt="图 17 照明区域设置参数示意图" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200723093208.png" /><br />
+<p><img alt="图 17 照明区域设置参数示意图" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200723093208.png" /><br />
 图 17 照明区域设置参数示意图</p>
-<p><img alt="图 18 LampDeploy脚本可编辑变量" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200723093239.png" /><br />
+<p><img alt="图 18 LampDeploy脚本可编辑变量" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200723093239.png" /><br />
 图 18 LampDeploy脚本可编辑变量  </p>
 <p>全部设置完成后，点击“生成照明回路”，脚本会按照设置自动实例化照明灯具并布设至隧道场景内。  </p>
 <div class="admonition 注意">
@@ -1314,7 +1314,7 @@
 <li>脚本功能有限，仅能实现简单的灯具布设逻辑，即照明区域不交叉的布设逻辑，实际工程中，可能大部分并不按照此逻辑布设，待完善。</li>
 </ol>
 </div>
-<p><img alt="图 19 灯具布设器生成灯具层级" src="https://gitee.com/sun_zhu/MarkdownImage/raw/master/img/20200723093314.png" /><br />
+<p><img alt="图 19 灯具布设器生成灯具层级" src="https://sunzhu-aliyun-oss-bucket.oss-cn-beijing.aliyuncs.com/img/20200723093314.png" /><br />
 图 19 灯具布设器生成灯具层级  </p>
 
               
